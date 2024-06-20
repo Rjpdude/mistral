@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 nvidia/cuda:12.4.1-cudnn-devel-rockylinux9 as base
 
-RUN apt update -y && apt-get install git python3 pip3
+RUN apt-get -y update && apt-get install -y python3 wget pip3
 
 WORKDIR /workspace
 COPY src .
