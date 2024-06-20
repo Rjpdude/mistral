@@ -2,8 +2,8 @@ FROM --platform=linux/amd64 nvidia/cuda:12.4.1-cudnn-devel-rockylinux9 as base
 
 WORKDIR /workspace
 
-RUN apt update -y \
-    && apt upgrade -y
+RUN apt-get update -y \
+    && apt-get upgrade -y
 
 FROM base as install
 
