@@ -1,12 +1,6 @@
 FROM --platform=linux/amd64 nvidia/cuda:12.4.1-cudnn-devel-rockylinux9 as base
 
 WORKDIR /workspace
-
-RUN apt-get update -y && apt-get upgrade -y
-
-FROM base as install
-
-WORKDIR /workspace
 COPY src .
 
 RUN git clone https://github.com/mistralai/mistral-finetune.git . \
