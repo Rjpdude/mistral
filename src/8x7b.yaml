@@ -1,0 +1,31 @@
+model_id_or_path: "/workspace/data/models"
+
+data:
+  instruct_data: "/workspace/data/train.jsonl"
+  eval_instruct_data: "/data/eval.jsonl"
+
+lora:
+  rank: 64
+  alpha: 16
+  dropout: 0.05
+  target_linear: true
+
+seq_len: 32768
+batch_size: 2
+num_microbatches: 8
+max_steps: 100
+optim:
+  lr: 0.0002
+  weight_decay: 0.1
+  pct_start: 0.05
+
+seed: 6502
+log_freq: 1
+eval_freq: 100
+no_eval: False
+ckpt_freq: 100
+
+flash_attention: true
+save_adapters: true
+
+run_dir: "/workspace/data/output"
